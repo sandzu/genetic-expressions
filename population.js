@@ -76,28 +76,28 @@ const new_population = old_population => {
     return survivors.concat(newborns);
 }
 
-const generation = (population, generation_count = 0) => {
-    const next_population = new_population(population);
-    console.log("NEW GENERATION AVG FITNESS ", avg_fitness(next_population));
-    console.log("NEW GENERATION BEST FITNESS ", eval_fitness(next_population.sort(sort_func)[0]));
-    console.log('NEW GENERATION BEST ORGANISM ', next_population.sort(sort_func)[0]);
-    console.log(expression(next_population.sort(sort_func)[0]), " = ", eval(expression(next_population.sort(sort_func)[0])));
-    console.log('press y to continue')
-    return next_population;
-}
 
 
 console.log('LETS FIND AN EXPRESSION OF THE FORM "1 a 2 b 3 c 4 d ... h 9" THAT EVALUATES TO 100. ')
 console.log('PRESS y TO START')
 let population = populate(POPULATION_SIZE, NUMBERS);
-
+let current_gen = 0
 var stdin = process.openStdin();
 stdin.addListener("data", (d)=>{
-    
     // note:  d is an object, and when converted to a string it will
     // end with a linefeed.  so we (rather crudely) account for that  
     // with toString() and then trim() 
     if(d.toString().trim() === 'y'){
-        population = generation(population);
+        population = new_population(population);
+        const brute = populate(POPULATION_SIZE, NUMBERS);
+        if(eval(expression(brute.sort(sort_func)[0])) === 0) console.log('BRUTE FORCE HAS SUCCEEDED');
+        current_gen += 1;
+        console.log('GEN ', current_gen);
+        console.log("NEW GENERATION AVG FITNESS ", avg_fitness(population));
+        console.log("NEW GENERATION BEST FITNESS ", eval_fitness(population.sort(sort_func)[0]));
+        console.log('NEW GENERATION BEST ORGANISM ', population.sort(sort_func)[0]);
+        console.log(expression(population.sort(sort_func)[0]), " = ", eval(expression(population.sort(sort_func)[0])));
+        
+        console.log('press y to continue')
     }
 })
