@@ -14,4 +14,4 @@ Consider `+*+*+++*`, which creates the expression `1+2*3+4*5+6+7+8*9`, which eva
 We seed an initial, randomly generated population. We discard the least fit members and breed the remaining population to produce a new generation. Repeat this process until a solution is found.
 
 ##Ideas
-How does this solution scale? The next step is to build a proper DS solution to compare, and see how both solutions scale. 
+How does this solution scale? The next step is to build a proper DP solution to compare, and see how both solutions scale. 
