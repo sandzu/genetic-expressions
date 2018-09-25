@@ -1,4 +1,5 @@
 # genetic-expressions
+To run, enter in console `node population.js` and follow console prompt.
 ## Problem
 You're given an array of ordered, increasing integers `[1,2...9]`. You're tasked with finding a sequence of arithmetic operators such that when the operators are inserted between each integer, the result is an expression that evaluates to a 100.
 
@@ -13,5 +14,5 @@ Consider `+*+*+++*`, which creates the expression `1+2*3+4*5+6+7+8*9`, which eva
 ## Solution
 We seed an initial, randomly generated population. We discard the least fit members and breed the remaining population to produce a new generation. Repeat this process until a solution is found.
 
-##Ideas
+## Ideas
 How does this solution scale? The next step is to build a proper DP solution to compare, and see how both solutions scale. 
