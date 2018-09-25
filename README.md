@@ -1,6 +1,6 @@
 # genetic-expressions
 ## Problem
-You're given an array of ordered, increasing integers `[1,2...9]`. You're tasked with finding a sequence of arithmetic operators such that when the operators are inserted between each integer, the result an expression that evaluates to a 100.
+You're given an array of ordered, increasing integers `[1,2...9]`. You're tasked with finding a sequence of arithmetic operators such that when the operators are inserted between each integer, the result is an expression that evaluates to a 100.
 
 An example solution is `+-*+*++*`, since `1+2-3*4+5*6+7+8*9` evaluates to 100. 
 ## Approaches
