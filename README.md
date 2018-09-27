@@ -1,8 +1,8 @@
 # genetic-expressions
 ## genetic proof of existence 
-In a terminal, run `genetic.js` and follow the prompts.
+In a terminal, run `node genetic.js` and follow the prompts.
 ## DP comprehensive solution
-In a terminal, run `DP.js`.
+In a terminal, run `node DP.js`.
 ## Problem
 You're given an array of ordered, increasing integers `[1,2...9]`. You're tasked with finding a sequence of arithmetic operators such that when the operators are inserted between each integer, the result is an expression that evaluates to a 100.
 
