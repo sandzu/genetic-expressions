@@ -46,9 +46,7 @@ class myHash {
 
 //hardcode the first result
 const first_case = new myHash;
-console.log(first_case);
 first_case.set(NUMBERS[0], NUMBERS.shift());
-console.log(first_case);
 var computed = first_case;
 
 NUMBERS.forEach(number => {
